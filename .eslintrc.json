@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "extends": ["next", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "import/no-default-export": ["error"],
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+
+  },
+  "overrides": [
+    {
+      "files": [
+        "app/**/loading.tsx",
+        "app/**/not-found.tsx",
+        "app/**/page.tsx",
+        "app/**/layout.tsx"
+      ],
+      "rules": {
+        "import/no-default-export": 0
+      }
+    }
+  ]
 }
