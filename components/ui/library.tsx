@@ -8,7 +8,7 @@ export async function Library() {
   const session = await getServerSession(authOptions);
   const data = await getTop(session.accessToken, "artists");
   return (
-    <div className="bg-[#121212] p-6 pr-1 rounded-md flex flex-col gap-4 block h-full">
+    <div className="bg-[#121212] px-6 py-2 pr-1 rounded-md flex flex-col gap-4 block h-full">
       <h2 className="shadow-md">Your Library</h2>
       <ScrollArea className="gap-2 flex-grow h-0">
         <ul className="flex flex-col gap-4">
