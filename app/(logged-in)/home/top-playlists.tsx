@@ -14,9 +14,7 @@ export async function TopPlaylists() {
     <div>
       <h1 className="mb-4 text-3xl font-semibold">Good afternoon</h1>
       <div className="grid grid-cols-3 gap-4">
-        {data.items.map((i) => (
-          <TopPlayList key={i.id} playlist={i} />
-        ))}
+        {data?.items?.map((i) => <TopPlayList key={i.id} playlist={i} />)}
       </div>
     </div>
   );
