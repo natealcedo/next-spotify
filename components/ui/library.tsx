@@ -8,15 +8,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 export async function Library() {
   const session = await getServerSession(authOptions);
   const data = await getTop(session.accessToken, "artists");
+  console.log(session.accessToken);
   return (
-    <div className="bg-[#121212] px-6 py-2 pr-1 rounded-md flex flex-col gap-4 block h-full">
+    <div className="bg-[#121212] p-2 pr-1 rounded-md flex flex-col gap-4 h-full">
       <h2 className="shadow-md">Your Library</h2>
       <ScrollArea className="gap-2 flex-grow h-0">
         <ul className="flex flex-col gap-2 ">
           {data.items?.map((item: any) => (
             <div
               key={item.id}
-              className="flex items-start gap-4 hover:bg-[#b3b3b3]/10 transition-colors ease-in-out px-1 py-2 border-transparent rounded-md hover:cursor-pointer duration-200"
+              className="flex items-start gap-4 hover:bg-[#b3b3b3]/10 transition-colors ease-in-out p-2 border-transparent rounded-md hover:cursor-pointer duration-200"
             >
               <Image
                 src={item.images[0].url}
@@ -39,7 +40,7 @@ export async function Library() {
 
 export function LibraryLoading() {
   return (
-    <div className="bg-[#121212] px-6 py-2 pr-1 rounded-md flex flex-col gap-4 h-full">
+    <div className="bg-[#121212] p-2 pr-1 rounded-md flex flex-col gap-4 h-full">
       <h2 className="shadow-md">Your Library</h2>
       <ScrollArea className="gap-2 flex-grow h-0">
         <ul className="flex flex-col gap-4">
