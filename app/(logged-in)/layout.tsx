@@ -6,7 +6,7 @@ import { authOptions } from "@/app/api/auth/auth-options";
 import { redirect } from "next/navigation";
 import { WebPlayer } from "@/app/(logged-in)/web-player";
 import { twMerge } from "tailwind-merge";
-import { Navbar } from "@/components/ui/navbar";
+import { Sidenav } from "@/components/ui/sidenav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions);
-  console.log(session?.accessToken);
   if (!session) {
     redirect("/login");
   }
@@ -29,9 +28,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           "grid grid-cols-[305px_1fr] grid-rows-[1fr_80px] min-h-screen grid-flow-row relative bg-black"
         )}
       >
-        <Navbar />
+        <Sidenav />
         <main className="col-span-1 row-span-1 bg-black py-2 h-full w-full rounded-lg">
-          <div className="bg-[#121212] p-4 text-white h-full rounded-lg">{children}</div>
+          <div className="bg-[#121212] p-4 text-white h-full rounded-lg">
+            <div>Navbar</div>
+            {children}
+          </div>
         </main>
         <WebPlayer />
       </body>
