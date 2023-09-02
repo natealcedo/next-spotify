@@ -20,7 +20,7 @@ export function Navbar() {
     }
   }, [pathName]);
   return (
-    <div className="bg-blur flex w-full justify-between p-4">
+    <div className="sticky top-0 flex w-full justify-between p-4">
       <div className="flex w-full justify-start gap-2">
         <span>left</span>
         <span>right</span>

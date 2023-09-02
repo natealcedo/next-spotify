@@ -26,6 +26,7 @@
   "overrides": [
     {
       "files": [
+        "tailwind.config.ts",
         "app/**/loading.tsx",
         "app/**/not-found.tsx",
         "app/**/page.tsx",

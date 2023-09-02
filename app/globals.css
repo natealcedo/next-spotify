@@ -74,3 +74,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+.grid-container {
+  display: grid;
+  height: 100%;
+  grid-template-areas:
+  "sidebar view view"
+  "player player player";
+
+  grid-template-rows: 1fr 80px;
+  grid-template-columns: 305px 1fr;
+}
+
+.page {
+  grid-area: view;
+}
+
+.nav {
+  grid-area: sidebar;
+}
+.player {
+  grid-area: player;
+}
