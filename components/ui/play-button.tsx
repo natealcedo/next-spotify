@@ -7,7 +7,10 @@ import { cn } from "@/lib/utils";
 export function PlayButton() {
   return (
     <Button
-      onClick={() => alert("click")}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      }}
       tabIndex={0}
       className={cn(
         "absolute right-4 h-12 w-12 rounded-full p-3 text-white opacity-0 " +
