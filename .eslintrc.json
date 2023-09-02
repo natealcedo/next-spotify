@@ -4,7 +4,7 @@
   "plugins": ["@typescript-eslint", "unused-imports", "tailwindcss"],
   "root": true,
   "rules": {
-    "tailwindcss/no-custom-classname": "warn",
+    "tailwindcss/no-custom-classname": "off",
     "tailwindcss/no-contradicting-classname": "error",
     "tailwindcss/classnames-order": "error",
     "@typescript-eslint/no-explicit-any": "off",
