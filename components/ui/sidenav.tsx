@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logout } from "@/app/(logged-in)/login";
 import { Library } from "@/components/ui/library";
 
 export function Sidenav() {
@@ -8,7 +7,6 @@ export function Sidenav() {
       <div className="rounded-md bg-[#121212] flex flex-col gap-6 p-6">
         <Link href="/home">Home</Link>
         <Link href="/search">Search</Link>
-        <Logout />
       </div>
       <Library />
     </nav>
