@@ -1,3 +1,3 @@
-export default async function Home() {
-  return <main className="flex flex-col items-center justify-between p-24">Search</main>;
+export default async function Search() {
+  return <div>Search</div>;
 }
