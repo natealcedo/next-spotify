@@ -30,8 +30,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         )}
       >
         <Sidenav />
-        <main className="col-span-1 row-span-1 bg-black py-2 h-full w-full rounded-lg">
-          <div className="bg-[#121212] p-4 text-white h-full rounded-lg">
+        <main className="col-span-1 row-span-1 h-full w-full rounded-lg bg-black py-2">
+          <div className="h-full rounded-lg bg-[#121212] p-4 text-white">
             <Navbar />
             {children}
           </div>
