@@ -11,6 +11,8 @@ import {
 import { Logout } from "@/app/(logged-in)/login";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const pathName = usePathname();
@@ -20,11 +22,17 @@ export function Navbar() {
     }
   }, [pathName]);
   return (
-    <div className="sticky top-0 flex w-full justify-between p-4">
+    <div className="sticky top-0 z-10 flex h-24 w-full justify-between px-2 py-4 backdrop-blur-md">
       <div className="flex w-full justify-start gap-2">
-        <span>left</span>
-        <span>right</span>
-        {pathName === "/search" ? <input id="search" type="text" className="text-black" /> : null}
+        <Button className="rounded-full">Back</Button>
+        <Button className="rounded-full">Forward</Button>
+        {pathName === "/search" ? (
+          <Input
+            type="text"
+            className="w-[300px] rounded-full bg-black/20 placeholder:text-white"
+            placeholder="What do you want to listen to?"
+          />
+        ) : null}
       </div>
       <div>
         <DropdownMenu>
