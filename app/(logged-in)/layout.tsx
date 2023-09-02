@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { WebPlayer } from "@/app/(logged-in)/web-player";
 import { twMerge } from "tailwind-merge";
 import { Sidenav } from "@/components/ui/sidenav";
+import { Navbar } from "@/components/ui/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Sidenav />
         <main className="col-span-1 row-span-1 bg-black py-2 h-full w-full rounded-lg">
           <div className="bg-[#121212] p-4 text-white h-full rounded-lg">
-            <div>Navbar</div>
+            <Navbar />
             {children}
           </div>
         </main>
