@@ -6,8 +6,8 @@ import { authOptions } from "@/app/api/auth/auth-options";
 import { redirect } from "next/navigation";
 import { WebPlayer } from "@/app/(logged-in)/web-player";
 import { twMerge } from "tailwind-merge";
-import { Navbar } from "@/app/(logged-in)/navbar";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Navbar } from "@/components/ui/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body
         className={twMerge(
           inter.className,
-          "grid grid-cols-[305px_1fr] grid-rows-[1fr_80px] min-h-screen grid-flow-row"
+          "grid grid-cols-[305px_1fr] grid-rows-[1fr_80px] min-h-screen grid-flow-row relative"
         )}
       >
         <Navbar />

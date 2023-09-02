@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Library } from "@/app/(logged-in)/library";
 import { Logout } from "@/app/(logged-in)/login";
+import { Library } from "@/components/ui/library";
 
 export function Navbar() {
   return (
