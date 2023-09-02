@@ -11,8 +11,8 @@ export default async function Login() {
     redirect("/");
   }
   return (
-    <div className="h-full flex flex-col items-center justify-center ">
-      <Card className="w-[300px] flex flex-col gap-2">
+    <div className="flex h-full flex-col items-center justify-center ">
+      <Card className="flex w-[300px] flex-col gap-2">
         <CardHeader>
           <CardTitle>Next JS Spotify</CardTitle>
         </CardHeader>
