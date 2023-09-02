@@ -25,7 +25,7 @@ function TopPlayList(props: { playlist: PlayList }) {
   return (
     url && (
       <Link
-        href="/"
+        href={`/playlists/${props.playlist.id}`}
         className={cn(
           "w-full flex  gap-2 rounded-md overflow-hidden  border border-transparent " +
             "duration-500 bg-white/10 transition-colors  ease-in-out hover:cursor-pointer hover:bg-white/20 group"
