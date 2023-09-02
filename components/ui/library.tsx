@@ -8,7 +8,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 export async function Library() {
   const session = await getServerSession(authOptions);
   const data = await getTop(session.accessToken, "artists");
-  console.log(session.accessToken);
   return (
     <div className="flex h-full flex-col gap-4 rounded-md bg-[#121212] p-2 pr-1">
       <h2 className="shadow-md">Your Library</h2>
