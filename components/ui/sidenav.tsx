@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Library } from "@/components/ui/library";
+import { Library, LibraryLoading } from "@/components/ui/library";
+import { Suspense } from "react";
 
 export function Sidenav() {
   return (
@@ -8,7 +9,9 @@ export function Sidenav() {
         <Link href="/home">Home</Link>
         <Link href="/search">Search</Link>
       </div>
-      <Library />
+      <Suspense fallback={<LibraryLoading />}>
+        <Library />
+      </Suspense>
     </nav>
   );
 }
