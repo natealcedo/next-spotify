@@ -5,6 +5,7 @@ import { getUsersTopPlaylists, PlayList } from "@/lib/spotify";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { PlayButton } from "@/components/ui/play-button";
+import Link from "next/link";
 
 export async function TopPlaylists() {
   const session = await getServerSession(authOptions);
@@ -25,7 +26,8 @@ function TopPlayList(props: { playlist: PlayList }) {
   const url = props.playlist.images[0]?.url;
   return (
     url && (
-      <div
+      <Link
+        href="/"
         className={cn(
           "w-full flex  gap-2 rounded-md overflow-hidden  border border-transparent " +
             "duration-500 bg-white/10 transition-colors  ease-in-out hover:cursor-pointer hover:bg-white/20 group"
@@ -38,7 +40,7 @@ function TopPlayList(props: { playlist: PlayList }) {
             <PlayButton />
           </div>
         </div>
-      </div>
+      </Link>
     )
   );
 }
