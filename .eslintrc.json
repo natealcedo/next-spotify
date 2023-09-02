@@ -1,9 +1,12 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["next", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
-  "plugins": ["@typescript-eslint", "unused-imports"],
+  "extends": ["next", "plugin:@typescript-eslint/recommended",  "plugin:prettier/recommended"],
+  "plugins": ["@typescript-eslint", "unused-imports", "tailwindcss"],
   "root": true,
   "rules": {
+    "tailwindcss/no-custom-classname": "warn",
+    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/classnames-order": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
     "import/no-default-export": ["error"],
