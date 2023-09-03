@@ -31,6 +31,19 @@ export interface SpotifyResponse {
   total: number;
 }
 
+export async function refreshAccessToken(refreshToken: string) {
+  return fetch("https://api.spotify.com/api/token", {
+    headers: {
+      "Content-Type": "application/x-www-form-url",
+    },
+    body: JSON.stringify({
+      grant_type: "refresh_token",
+      client_id: process.env.SPOTIFY_CLIENT_ID,
+      refresh_token: refreshToken,
+    }),
+  }).then((res) => res.json());
+}
+
 export async function getMe(token: string) {
   return fetch("https://api.spotify.com/v1/me", {
     headers: {
