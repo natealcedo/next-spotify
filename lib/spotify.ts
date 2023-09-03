@@ -41,6 +41,7 @@ export async function refreshAccessToken(refreshToken: string) {
       client_id: process.env.SPOTIFY_CLIENT_ID,
       refresh_token: refreshToken,
     }),
+    method: "POST",
   }).then((res) => res.json());
 }
 
