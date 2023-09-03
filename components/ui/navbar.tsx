@@ -22,7 +22,7 @@ export function Navbar() {
     }
   }, [pathName]);
   return (
-    <div className="sticky top-0 z-10 flex h-24 w-full justify-between px-2 py-4 ">
+    <div className="sticky top-0 z-10 flex h-24 w-full justify-between bg-[#121212] px-2 py-4">
       <div className="flex w-full justify-start gap-2 backdrop-blur-md">
         <Button className="rounded-full">Back</Button>
         <Button className="rounded-full">Forward</Button>
