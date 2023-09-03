@@ -13,8 +13,9 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export function Navbar() {
+export function Navbar(props: { className?: string }) {
   const pathName = usePathname();
   useEffect(() => {
     if (pathName === "/search") {
@@ -22,7 +23,12 @@ export function Navbar() {
     }
   }, [pathName]);
   return (
-    <div className="sticky top-0 z-10 flex h-24 w-full justify-between bg-[#121212] px-2 py-4">
+    <div
+      className={cn(
+        "sticky top-0 z-10 flex h-24 w-full justify-between bg-[#121212] px-2 py-4",
+        props.className
+      )}
+    >
       <div className="flex w-full justify-start gap-2 backdrop-blur-md">
         <Button className="rounded-full">Back</Button>
         <Button className="rounded-full">Forward</Button>

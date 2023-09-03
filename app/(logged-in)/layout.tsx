@@ -6,9 +6,7 @@ import { authOptions } from "@/app/api/auth/auth-options";
 import { redirect } from "next/navigation";
 import { WebPlayer } from "@/app/(logged-in)/web-player";
 import { Sidenav } from "@/components/ui/sidenav";
-import { Navbar } from "@/components/ui/navbar";
 import { cn } from "@/lib/utils";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,15 +25,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body
         className={cn(
           inter.className,
-          "grid-container relative min-h-screen bg-black p-2 gap-2 overflow-hidden"
+          "grid-container relative overflow-hidden min-h-screen bg-black  p-1 gap-2 text-white"
         )}
       >
         <Sidenav />
-        <main className="flex h-full flex-col bg-black text-white">
-          <Navbar />
-          <ScrollArea className="view flex-grow overflow-hidden rounded-md bg-[#121212] pb-2">
-            <div className="h-[calc(100vh-180px)] px-4 py-2">{children}</div>
-          </ScrollArea>
+        <main className="flex h-full flex-col overflow-hidden rounded-md bg-black ">
+          {children}
         </main>
         <WebPlayer />
       </body>
