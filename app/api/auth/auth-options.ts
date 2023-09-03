@@ -1,4 +1,5 @@
 import SpotifyProvider from "next-auth/providers/spotify";
+import { refreshAccessToken } from "@/lib/spotify";
 
 const scopes = [
   "user-read-email",
@@ -22,8 +23,8 @@ const scopes = [
 export const authOptions = {
   secret: process.env.AUTH_SECRET,
   callbacks: {
-    async jwt({ token, account, user }: any) {
-      if (account && user)
+    async jwt({ token, account }: any) {
+      if (account) {
         return {
           ...token,
           accessToken: account.access_token,
@@ -31,7 +32,17 @@ export const authOptions = {
           username: account.providerAccountId,
           accessTokenExpires: account.expires_at * 1000,
         };
-      return token;
+      } else if (Date.now() < token.accessTokenExpires * 1000) {
+        return token;
+      } else {
+        const data = await refreshAccessToken(token.refreshToken);
+        return {
+          ...token,
+          accessToken: data.access_token,
+          refreshToken: data.refresh_token,
+          accessTokenExpires: data.expires_in * 1000,
+        };
+      }
     },
     async session({ session, token }: any) {
       session.accessToken = token.accessToken;
