@@ -32,8 +32,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       >
         <Sidenav />
         <main className="flex h-full flex-col bg-black text-white">
-          <ScrollArea className="view flex-grow overflow-hidden rounded-md bg-[#121212] ">
-            <Navbar />
+          <Navbar />
+          <ScrollArea className="view flex-grow overflow-hidden rounded-md bg-[#121212] pb-2">
             <div className="h-[calc(100vh-180px)] px-4 py-2">{children}</div>
           </ScrollArea>
         </main>
